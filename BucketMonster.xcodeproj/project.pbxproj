@@ -14,6 +14,7 @@
 		9DD9ECD11E4EAB7F009C7A49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DD9ECCF1E4EAB7F009C7A49 /* LaunchScreen.storyboard */; };
 		9DD9ECDC1E4EAB7F009C7A49 /* BucketMonsterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD9ECDB1E4EAB7F009C7A49 /* BucketMonsterTests.swift */; };
 		9DD9ECE71E4EACEC009C7A49 /* BucketListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD9ECE61E4EACEC009C7A49 /* BucketListTableViewController.swift */; };
+		9DD9ECE91E4ED258009C7A49 /* BucketListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD9ECE81E4ED258009C7A49 /* BucketListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		9DD9ECDB1E4EAB7F009C7A49 /* BucketMonsterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketMonsterTests.swift; sourceTree = "<group>"; };
 		9DD9ECDD1E4EAB7F009C7A49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DD9ECE61E4EACEC009C7A49 /* BucketListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BucketListTableViewController.swift; sourceTree = "<group>"; };
+		9DD9ECE81E4ED258009C7A49 /* BucketListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BucketListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				9DD9ECCF1E4EAB7F009C7A49 /* LaunchScreen.storyboard */,
 				9DD9ECD21E4EAB7F009C7A49 /* Info.plist */,
 				9DD9ECE61E4EACEC009C7A49 /* BucketListTableViewController.swift */,
+				9DD9ECE81E4ED258009C7A49 /* BucketListTableViewCell.swift */,
 			);
 			path = BucketMonster;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DD9ECC91E4EAB7F009C7A49 /* ViewController.swift in Sources */,
+				9DD9ECE91E4ED258009C7A49 /* BucketListTableViewCell.swift in Sources */,
 				9DD9ECE71E4EACEC009C7A49 /* BucketListTableViewController.swift in Sources */,
 				9DD9ECC71E4EAB7F009C7A49 /* AppDelegate.swift in Sources */,
 			);
@@ -410,6 +414,7 @@
 				9DD9ECE21E4EAB7F009C7A49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9DD9ECE31E4EAB7F009C7A49 /* Build configuration list for PBXNativeTarget "BucketMonsterTests" */ = {
 			isa = XCConfigurationList;
@@ -418,6 +423,7 @@
 				9DD9ECE51E4EAB7F009C7A49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
