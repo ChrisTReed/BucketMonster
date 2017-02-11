@@ -26,10 +26,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--Table View Controller-->
+        <!--Bucket List Table View Controller-->
         <scene sceneID="rbD-UP-nqL">
             <objects>
-                <tableViewController id="U0m-LF-LGh" sceneMemberID="viewController">
+                <tableViewController id="U0m-LF-LGh" customClass="BucketListTableViewController" customModule="BucketMonster" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" id="KHG-pi-8CN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

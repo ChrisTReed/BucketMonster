@@ -15,6 +15,68 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "5"
             endingLineNumber = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BucketMonster.BucketListTableViewCell.init (style : __C.UITableViewCellStyle, reuseIdentifier : Swift.Optional&lt;Swift.String&gt;) -&gt; BucketMonster.BucketListTableViewCell"
+                  moduleName = "BucketMonster"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christopherreed/BucketMonster/BucketMonster/BucketListTableViewCell.swift"
+                  timestampString = "508485177.667782"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "70">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BucketMonster.BucketListTableViewCell.__allocating_init (style : __C.UITableViewCellStyle, reuseIdentifier : Swift.Optional&lt;Swift.String&gt;) -&gt; BucketMonster.BucketListTableViewCell"
+                  moduleName = "BucketMonster"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christopherreed/BucketMonster/BucketMonster/BucketListTableViewCell.swift"
+                  timestampString = "508485177.670212"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BucketMonster.BucketListTableViewCell.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;BucketMonster.BucketListTableViewCell&gt;"
+                  moduleName = "BucketMonster"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christopherreed/BucketMonster/BucketMonster/BucketListTableViewCell.swift"
+                  timestampString = "508485177.672427"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BucketMonster.BucketListTableViewCell.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;BucketMonster.BucketListTableViewCell&gt;"
+                  moduleName = "BucketMonster"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christopherreed/BucketMonster/BucketMonster/BucketListTableViewCell.swift"
+                  timestampString = "508485177.674611"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "31">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
