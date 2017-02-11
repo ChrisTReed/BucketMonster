@@ -1,18 +1,34 @@
 //
-//  BucketListTableViewController.swift
+//  BucketItemTableViewController.swift
 //  BucketMonster
 //
-//  Created by Christopher Reed on 2/10/17.
+//  Created by Christopher Reed on 2/11/17.
 //  Copyright © 2017 Christopher Reed. All rights reserved.
 //
 
 import UIKit
 
-class BucketListTableViewController: UITableViewController {
+class BucketItemTableViewController: UITableViewController {
+    
+    //MARK: Properties
+    var bucketList = [BucketItem]()
+    
+    
+    //MARK: Private Methods
+    
+    private func loadSampleData() {
+        let b1 = BucketItem(name: "Groceries")
+        let b2 = BucketItem(name: "Get a Haircut")
+        let b3 = BucketItem(name: "Finish 4720")
+
+
+        bucketList += [b1, b2, b3]
+            
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadSampleData()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -29,23 +45,27 @@ class BucketListTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return bucketList.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cellIdentifier = "BucketItemTableViewCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! BucketItemTableViewCell
 
+        let bucketItem = bucketList[indexPath.row]
+        
         // Configure the cell...
+        cell.nameLabel.text = bucketItem.name
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

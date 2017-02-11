@@ -1,5 +1,5 @@
 //
-//  BucketListTableViewCell.swift
+//  BucketItemTableViewCell.swift
 //  BucketMonster
 //
 //  Created by Christopher Reed on 2/11/17.
@@ -8,12 +8,10 @@
 
 import UIKit
 
-class BucketListTableViewCell: UITableViewCell {
+class BucketItemTableViewCell: UITableViewCell {
     
     //MARK: Properties
-    
-    @IBOutlet weak var bucketItemLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     
 
     override func awakeFromNib() {
