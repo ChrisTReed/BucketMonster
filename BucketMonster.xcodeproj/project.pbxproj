@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D642EBE1E5250AF00B2EEBA /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D642EBD1E5250AF00B2EEBA /* AddItemViewController.swift */; };
 		9DD9ECC71E4EAB7F009C7A49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD9ECC61E4EAB7F009C7A49 /* AppDelegate.swift */; };
 		9DD9ECC91E4EAB7F009C7A49 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD9ECC81E4EAB7F009C7A49 /* ViewController.swift */; };
 		9DD9ECCC1E4EAB7F009C7A49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DD9ECCA1E4EAB7F009C7A49 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D642EBD1E5250AF00B2EEBA /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		9DD9ECC31E4EAB7F009C7A49 /* BucketMonster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BucketMonster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD9ECC61E4EAB7F009C7A49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DD9ECC81E4EAB7F009C7A49 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				9DD9ECEC1E4FAB7C009C7A49 /* BucketItemTableViewCell.swift */,
 				9DD9ECEE1E4FAD79009C7A49 /* BucketItemTableViewController.swift */,
 				9DD9ECF01E4FADEF009C7A49 /* BucketItem.swift */,
+				9D642EBD1E5250AF00B2EEBA /* AddItemViewController.swift */,
 			);
 			path = BucketMonster;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				9DD9ECEF1E4FAD79009C7A49 /* BucketItemTableViewController.swift in Sources */,
 				9DD9ECF11E4FADEF009C7A49 /* BucketItem.swift in Sources */,
 				9DD9ECC71E4EAB7F009C7A49 /* AppDelegate.swift in Sources */,
+				9D642EBE1E5250AF00B2EEBA /* AddItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

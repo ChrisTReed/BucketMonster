@@ -17,9 +17,9 @@ class BucketItemTableViewController: UITableViewController {
     //MARK: Private Methods
     
     private func loadSampleData() {
-        let b1 = BucketItem(name: "Groceries")
-        let b2 = BucketItem(name: "Get a Haircut")
-        let b3 = BucketItem(name: "Finish 4720")
+        let b1 = BucketItem(name: "Cry Softly", date: Date())
+        let b2 = BucketItem(name: "Call Parents", date: Date())
+        let b3 = BucketItem(name: "Go to ABC", date: Date())
 
 
         bucketList += [b1, b2, b3]
@@ -62,6 +62,13 @@ class BucketItemTableViewController: UITableViewController {
         
         // Configure the cell...
         cell.nameLabel.text = bucketItem.name
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        let convertedDate = dateFormatter.string(from: bucketItem.date)
+        cell.dateLabel.text = convertedDate
+
+
 
         return cell
     }
@@ -111,5 +118,7 @@ class BucketItemTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
 
 }
