@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import os.log
 
 class BucketItemTableViewController: UITableViewController {
     
     //MARK: Properties
     var bucketList = [BucketItem]()
+    //var bucketItem: BucketItem?
     
     
     //MARK: Private Methods
@@ -73,6 +75,26 @@ class BucketItemTableViewController: UITableViewController {
         return cell
     }
     
+    
+    // Lets you add various buttons when you swipe
+    override func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
+        let done = UITableViewRowAction(style: .normal, title: "Done") { action, index in
+            
+            
+        }
+        done.backgroundColor = .green
+        
+        let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
+            
+            
+        }
+        edit.backgroundColor = .orange
+        
+        
+        return [done, edit]
+    }
+
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -109,15 +131,34 @@ class BucketItemTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        switch(segue.identifier ?? "") {
+//            case "AddItem":
+//                os_log("Adding a new meal.", log: OSLog.default, type: .debug)
+//            
+//            default:
+//                fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+//        }
+//    }
+    
+
+    @IBAction func unwindToBucketList(sender: UIStoryboardSegue) {
+        
+        if let sourceViewController = sender.source as? AddItemViewController, let bucketItem = sourceViewController.bucketItem {
+            
+            // Add a new meal.
+            let newIndexPath = IndexPath(row: bucketList.count, section: 0)
+            
+            bucketList.append(bucketItem)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+        
     }
-    */
     
     
 

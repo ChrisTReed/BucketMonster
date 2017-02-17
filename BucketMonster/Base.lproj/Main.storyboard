@@ -56,7 +56,7 @@
                     <navigationItem key="navigationItem" title="To Do:" id="CHP-qS-bKb">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Z7B-JI-PPo">
                             <connections>
-                                <segue destination="TW1-y1-QV7" kind="presentation" id="ZUh-Ds-Npv"/>
+                                <segue destination="TW1-y1-QV7" kind="presentation" identifier="AddItem" id="ZUh-Ds-Npv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -65,7 +65,7 @@
             </objects>
             <point key="canvasLocation" x="2310" y="20"/>
         </scene>
-        <!--Add Item View Controller-->
+        <!--Your Item-->
         <scene sceneID="0dq-FS-fig">
             <objects>
                 <viewController id="V1N-Ua-OKZ" customClass="AddItemViewController" customModule="BucketMonster" customModuleProvider="target" sceneMemberID="viewController">
@@ -175,16 +175,28 @@
                             <constraint firstItem="hWh-Js-yvq" firstAttribute="top" secondItem="2LA-ed-uYh" secondAttribute="bottom" constant="8" symbolic="YES" id="XYf-v3-sMm"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="IZJ-x7-fAA">
+                    <navigationItem key="navigationItem" title="Your Item" id="IZJ-x7-fAA">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="haq-zR-wGE">
                             <connections>
                                 <action selector="cancelAction:" destination="V1N-Ua-OKZ" id="azn-bX-kJw"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="1Ht-Mb-BCa"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="1Ht-Mb-BCa">
+                            <connections>
+                                <segue destination="UKh-79-q8K" kind="unwind" unwindAction="unwindToBucketListWithSender:" id="Usv-K4-yoq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="descTextField" destination="TkT-Gg-Cyc" id="efQ-8y-KaR"/>
+                        <outlet property="latTextField" destination="DyY-Uh-p8v" id="vSS-ZD-MeF"/>
+                        <outlet property="lonTextField" destination="DyY-Uh-p8v" id="m3F-Wn-bIQ"/>
+                        <outlet property="nameTextField" destination="sMp-Nd-ccA" id="Uqs-4j-pbu"/>
+                        <outlet property="saveButton" destination="1Ht-Mb-BCa" id="aww-lL-eP3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="92d-Kg-0gu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="UKh-79-q8K" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2310" y="794"/>
         </scene>
