@@ -11,18 +11,26 @@ import os.log
 
 class BucketItemTableViewController: UITableViewController {
     
+   
+    
     //MARK: Properties
     var bucketList = [BucketItem]()
-    //var bucketItem: BucketItem?
+    var doneItems = [BucketItem] ()
+    var currentItem: BucketItem? = nil
+    var edit: Bool = false
+    
+    var currentCell: UITableViewCell?
     
     
     //MARK: Private Methods
     
     private func loadSampleData() {
-        let b1 = BucketItem(name: "Cry Softly", date: Date())
-        let b2 = BucketItem(name: "Call Parents", date: Date())
-        let b3 = BucketItem(name: "Go to ABC", date: Date())
+        
 
+        
+        let b1 = BucketItem(name: "Wyprawa do Austalii", date: Date())
+        let b2 = BucketItem(name: "Żaglowanie gdzieś na Karaibach", date: Date())
+        let b3 = BucketItem(name: "Opulikowanie artykułu", date: Date())
 
         bucketList += [b1, b2, b3]
             
@@ -78,8 +86,19 @@ class BucketItemTableViewController: UITableViewController {
     
     // Lets you add various buttons when you swipe
     override func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
+        
+        
         let done = UITableViewRowAction(style: .normal, title: "Done") { action, index in
             
+//           os_log("You did this thing", log: OSLog.default, type: .debug)
+//           
+            let alertController = UIAlertController(title: self.bucketList[editActionsForRowAt.row].name, message:
+                "wow u did it, v proud", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            
+            
+            
+            self.present(alertController, animated: true, completion: nil)
             
         }
         done.backgroundColor = .green
@@ -87,12 +106,22 @@ class BucketItemTableViewController: UITableViewController {
         let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
             
             
+            self.currentCell = tableView.cellForRow(at: editActionsForRowAt)!
+           
+            self.currentItem = self.bucketList[editActionsForRowAt.row]
+            self.performSegue(withIdentifier: "Edit", sender: self)
+            
+            
+            
+            
         }
         edit.backgroundColor = .orange
         
-        
         return [done, edit]
     }
+    
+    
+    
 
     
 
@@ -136,26 +165,49 @@ class BucketItemTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        switch(segue.identifier ?? "") {
-//            case "AddItem":
-//                os_log("Adding a new meal.", log: OSLog.default, type: .debug)
-//            
-//            default:
-//                fatalError("Unexpected Segue Identifier; \(segue.identifier)")
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch(segue.identifier ?? "") {
+            case "AddItem":
+                self.edit = false
+                os_log("Adding a new meal.", log: OSLog.default, type: .debug)
+            
+            case "Edit":
+               self.edit = true
+                if let vc=segue.destination as? AddItemViewController {
+                     vc.bucketItem = currentItem
+                }
+                
+            
+            
+            
+            default:
+                fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+        }
+    }
     
 
     @IBAction func unwindToBucketList(sender: UIStoryboardSegue) {
         
         if let sourceViewController = sender.source as? AddItemViewController, let bucketItem = sourceViewController.bucketItem {
             
-            // Add a new meal.
-            let newIndexPath = IndexPath(row: bucketList.count, section: 0)
             
-            bucketList.append(bucketItem)
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            
+            
+            //if let selectedIndexPath = tableView.indexPath(for: self.currentCell) {
+            if(edit) {
+                
+                let selectedIndexPath = tableView.indexPath(for: self.currentCell!)
+                // Update an existing item.
+                bucketList[(selectedIndexPath?.row)!] = bucketItem
+                tableView.reloadRows(at: [selectedIndexPath!], with: .none)
+            }
+            else {
+                // Add a new item.
+                let newIndexPath = IndexPath(row: bucketList.count, section: 0)
+            
+                bucketList.append(bucketItem)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
         }
         
     }

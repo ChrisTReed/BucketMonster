@@ -12,11 +12,13 @@ import Foundation
 class BucketItem: NSObject {
     
     var name: String = "New Note"
+    //var desc: String = "Sample Description"
     var date: Date
-//    var noteText: String = ""
+//
     
     init(name: String, date: Date) {
         self.name = name
+        //self.desc = desc
         self.date = date
     }
 

@@ -19,12 +19,28 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
     @IBOutlet weak var latTextField: UITextField!
     @IBOutlet weak var lonTextField: UITextField!
     
+    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var bucketItem: BucketItem?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        nameTextField.delegate = self
+        descTextField.delegate = self
+        
+        datePicker.datePickerMode = .date
+        
+        latTextField.keyboardType = UIKeyboardType.decimalPad
+        lonTextField.keyboardType = UIKeyboardType.decimalPad
+        
+        if let bucketItem = bucketItem {
+            navigationItem.title = bucketItem.name
+            nameTextField.text = bucketItem.name
+            descTextField.text = bucketItem.name
+            datePicker.date = bucketItem.date
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -42,7 +58,17 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
     
     
     @IBAction func cancelAction(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        let isPresentingInAddMealMode = presentingViewController is UINavigationController
+        
+        if isPresentingInAddMealMode {
+            dismiss(animated: true, completion: nil)
+        }
+        else if let owningNavigationController = navigationController {
+            owningNavigationController.popViewController(animated: true)
+        }
+        else {
+            fatalError("The ViewController is not inside a navigation controller.")
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -54,9 +80,10 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
             os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
             return
         }
-         let name = nameTextField.text ?? ""
+        let name = nameTextField.text ?? ""
+        let date = datePicker.date
         
-        bucketItem = BucketItem(name: name, date: Date())
+        bucketItem = BucketItem(name: name, date: date)
         
     }
 
