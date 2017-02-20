@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--To Do:-->
+        <!--Bucket List-->
         <scene sceneID="rbD-UP-nqL">
             <objects>
                 <tableViewController id="U0m-LF-LGh" customClass="BucketItemTableViewController" customModule="BucketMonster" customModuleProvider="target" sceneMemberID="viewController">
@@ -53,7 +53,7 @@
                             <outlet property="delegate" destination="U0m-LF-LGh" id="eUe-w7-aZ1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="To Do:" id="CHP-qS-bKb">
+                    <navigationItem key="navigationItem" title="Bucket List" id="CHP-qS-bKb">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Z7B-JI-PPo">
                             <connections>
                                 <segue destination="TW1-y1-QV7" kind="presentation" identifier="AddItem" id="ZUh-Ds-Npv"/>
@@ -68,7 +68,7 @@
             </objects>
             <point key="canvasLocation" x="1759" y="7"/>
         </scene>
-        <!--Your Item-->
+        <!--Bucket Item-->
         <scene sceneID="0dq-FS-fig">
             <objects>
                 <viewController id="V1N-Ua-OKZ" customClass="AddItemViewController" customModule="BucketMonster" customModuleProvider="target" sceneMemberID="viewController">
@@ -178,7 +178,7 @@
                             <constraint firstItem="hWh-Js-yvq" firstAttribute="top" secondItem="2LA-ed-uYh" secondAttribute="bottom" constant="8" symbolic="YES" id="XYf-v3-sMm"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Your Item" id="IZJ-x7-fAA">
+                    <navigationItem key="navigationItem" title="Bucket Item" id="IZJ-x7-fAA">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="haq-zR-wGE">
                             <connections>
                                 <action selector="cancelAction:" destination="V1N-Ua-OKZ" id="azn-bX-kJw"/>
