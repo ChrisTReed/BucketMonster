@@ -194,7 +194,7 @@
                         <outlet property="datePicker" destination="JTE-hB-rSz" id="e5a-9Z-UD4"/>
                         <outlet property="descTextField" destination="TkT-Gg-Cyc" id="efQ-8y-KaR"/>
                         <outlet property="latTextField" destination="DyY-Uh-p8v" id="vSS-ZD-MeF"/>
-                        <outlet property="lonTextField" destination="DyY-Uh-p8v" id="m3F-Wn-bIQ"/>
+                        <outlet property="lonTextField" destination="okt-MC-uh5" id="k6W-0A-dHm"/>
                         <outlet property="nameTextField" destination="sMp-Nd-ccA" id="Uqs-4j-pbu"/>
                         <outlet property="saveButton" destination="1Ht-Mb-BCa" id="aww-lL-eP3"/>
                     </connections>

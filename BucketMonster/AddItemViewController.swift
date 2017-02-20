@@ -38,7 +38,9 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         if let bucketItem = bucketItem {
             navigationItem.title = bucketItem.name
             nameTextField.text = bucketItem.name
-            descTextField.text = bucketItem.name
+            descTextField.text = bucketItem.desc
+            latTextField.text = String(bucketItem.lat)
+            lonTextField.text = String(bucketItem.lon)
             datePicker.date = bucketItem.date
         }
 
@@ -82,8 +84,11 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
         }
         let name = nameTextField.text ?? ""
         let date = datePicker.date
+        let desc = descTextField.text ?? ""
+        let lat = Float(latTextField.text!)
+        let lon = Float(lonTextField.text!)
         
-        bucketItem = BucketItem(name: name, date: date)
+        bucketItem = BucketItem(name: name, desc: desc, lat: lat!, lon: lon!, date: date, done: false)
         
     }
 
