@@ -16,7 +16,7 @@ class BucketItem: NSObject {
     var date: Date
     var lat: Float
     var lon: Float
-    var done: Bool
+    var done: Bool = false
 //
     
     init(name: String, desc: String, lat: Float, lon: Float, date: Date, done: Bool) {
