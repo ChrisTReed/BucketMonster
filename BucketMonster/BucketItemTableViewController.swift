@@ -11,7 +11,9 @@ import os.log
 
 class BucketItemTableViewController: UITableViewController {
     
-   
+//   A lot of the code was guided by Apple's FoodTracker App tutorial
+//    namely preparing data for segues and getting one view controller to work
+//    for both add and edit item functionalities
     
     //MARK: Properties
     var bucketList = [BucketItem]()
@@ -26,7 +28,7 @@ class BucketItemTableViewController: UITableViewController {
     
     private func loadSampleData() {
         
-        let b1 = BucketItem(name: "Wyprawa do Austalii", desc: "yeet", lat: 37.8, lon: 144.9, date: Date(), done: false)
+        let b1 = BucketItem(name: "Wyprawa do Australii", desc: "yeet", lat: 37.8, lon: 144.9, date: Date(), done: false)
         let b2 = BucketItem(name: "Żaglowanie gdzieś na Karaibach", desc: "yeet", lat: 21.4, lon: 79.6, date: Date(), done: true)
         let b3 = BucketItem(name: "Opublikowanie artykułu", desc: "yeet", lat: 50.0, lon: 19.9, date: Date(), done: false)
 
@@ -43,19 +45,6 @@ class BucketItemTableViewController: UITableViewController {
         //Organizing bucket by completion then date
         //http://stackoverflow.com/questions/29530620/sort-array-of-objects-by-two-properties
      
-//        bucketList.sort {
-//            if !$0.done && $1.done {
-//                return true
-//            }
-//            if $0.done && !$1.done {
-//               return false
-//            }
-//            if $0.done == $1.done {
-//                return $0.date < $1.date
-//            }
-//            
-//            return false
-//        }
         
         bucketList.sort { (s1, s2) -> Bool in
             if !s1.done && s2.done {
@@ -114,7 +103,6 @@ class BucketItemTableViewController: UITableViewController {
         }
 
 
-
         return cell
     }
     
@@ -131,7 +119,7 @@ class BucketItemTableViewController: UITableViewController {
 //            
 //            
 //            
-//            self.present(alertController, animated: true, completion: nil)
+//          self.present(alertController, animated: true, completion: nil)
             self.currentCell = tableView.cellForRow(at: editActionsForRowAt)!
             self.currentItem = self.bucketList[editActionsForRowAt.row]
             
@@ -142,8 +130,6 @@ class BucketItemTableViewController: UITableViewController {
                 self.currentItem?.done = true
             }
             print(self.currentItem?.done)
-            //self.currentCell?.backgroundColor = UIColor.lightGray
-//
             tableView.reloadData()
             
             self.bucketList.sort { (s1, s2) -> Bool in
