@@ -135,8 +135,12 @@ class BucketItemTableViewController: UITableViewController {
             self.currentCell = tableView.cellForRow(at: editActionsForRowAt)!
             self.currentItem = self.bucketList[editActionsForRowAt.row]
             
-            
-            self.currentItem?.done = true
+            if(self.currentItem?.done)!{
+                self.currentItem?.done = false
+            }
+            else {
+                self.currentItem?.done = true
+            }
             print(self.currentItem?.done)
             //self.currentCell?.backgroundColor = UIColor.lightGray
 //
