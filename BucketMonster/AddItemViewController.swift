@@ -43,8 +43,16 @@ class AddItemViewController: UIViewController, UINavigationControllerDelegate, U
             lonTextField.text = String(bucketItem.lon)
             datePicker.date = bucketItem.date
         }
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        view.addGestureRecognizer(tap)
 
         // Do any additional setup after loading the view.
+    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {

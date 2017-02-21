@@ -106,9 +106,11 @@ class BucketItemTableViewController: UITableViewController {
         
         if bucketItem.done {
             cell.backgroundColor = .lightGray
+            cell.dateLabel.textColor = .black
         }
         else {
             cell.backgroundColor = .clear
+            cell.dateLabel.textColor = .lightGray
         }
 
 
@@ -153,12 +155,6 @@ class BucketItemTableViewController: UITableViewController {
                                 
                                 return false
                             }
-            for row in 0 ..< tableView.numberOfRows(inSection: 0) {
-                //var cell:BucketItemTableViewCell = tableView.cellForRowAt(NSIndexPath(row: row, section: 0) as IndexPath)
-                //var cell: BucketItemTableViewCell = tableView.cellForRow(at: NSIndexPath(row: row, section: 0) as IndexPath)
-                
-                print(row)
-            }
             
         }
         done.backgroundColor = .green
